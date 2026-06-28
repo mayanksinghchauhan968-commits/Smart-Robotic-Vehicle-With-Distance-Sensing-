@@ -1,20 +1,22 @@
 # Smart Robotic Vehicle With Distance Sensing
 
-A 4-wheel-drive robotic vehicle built with Arduino, controlled via Bluetooth from a mobile app. It also includes ultrasonic distance sensing and voice control features.
+A 4-wheel-drive robotic vehicle built with Arduino, featuring Bluetooth control, autonomous obstacle avoidance, and voice control — all switchable depending on how you want to drive it.
 
 ## How It Works
 
-The car is driven by 4 DC motors via an Adafruit Motor Shield (AFMotor library). Commands are sent over Bluetooth from a mobile app (e.g. Arduino Bluetooth Controller / similar HC-05 control apps) as single characters, which the Arduino reads over Serial and maps to motor actions.
+The car is driven by 4 DC motors via an Adafruit Motor Shield (AFMotor library). It supports three control modes:
 
-A servo-mounted ultrasonic sensor (HC-SR04) is also wired in for distance sensing — currently used for measuring distance left/right, with the groundwork laid for full autonomous obstacle avoidance in a future version.
+- **Bluetooth control** — drive manually using a mobile Bluetooth app, sending single-character commands over Serial
+- **Autonomous obstacle avoidance** — a servo-mounted ultrasonic sensor (HC-SR04) continuously scans ahead; when an obstacle is detected within 12cm, the car reverses, checks both left and right distances, and automatically turns toward the clearer path
+- **Voice control** — accepts symbolic voice-to-text commands relayed over Serial from a voice-to-text mobile app, letting you steer the car hands-free
 
 ## Features
 
-- **Bluetooth control ** — drive forward, backward, left, right, and stop using a mobile Bluetooth app
-- **Distance sensing ** — ultrasonic sensor + servo sweep to measure distance on either side
-- **Obstacle avoidance ** — logic written to auto-reverse and turn toward the clearer side when an obstacle is detected within 12cm
-- **Voice control ** — accepts symbolic voice-to-text commands (`^` `-` `<` `>` `*`)
-
+- Manual Bluetooth driving (forward, backward, left, right, stop)
+- Real-time ultrasonic distance sensing with servo sweep (left/right scanning)
+- Fully autonomous obstacle avoidance — detects obstacles and re-routes automatically
+- Voice-controlled driving via symbolic commands (`^` `-` `<` `>` `*`)
+- Smooth integration between all three control modes
 
 ## Hardware Used
 
@@ -52,7 +54,15 @@ Install `AFMotor` via the Arduino Library Manager (or Adafruit's GitHub) before 
 | `R` | Turn right |
 | `S` | Stop |
 
-Pair your HC-05/HC-06 Bluetooth module with your phone, connect via any serial Bluetooth controller app, and send these characters as button presses.
+## Voice Command Reference
+
+| Command | Action |
+|---|---|
+| `^` | Move forward |
+| `-` | Move backward |
+| `<` | Turn left (if clear) |
+| `>` | Turn right (if clear) |
+| `*` | Stop |
 
 ## Setup
 
@@ -64,16 +74,13 @@ Pair your HC-05/HC-06 Bluetooth module with your phone, connect via any serial B
    - Motors → Motor Shield ports M1–M4
    - Bluetooth module → Arduino RX/TX (Serial)
 4. Upload the sketch to your Arduino.
-5. Pair your phone with the Bluetooth module and start sending movement commands.
+5. Pair your phone with the Bluetooth module to drive manually, or let the car run autonomously using the obstacle-avoidance mode.
 
 ## Future Upgrades
 
-- Improve obstacle avoidance accuracy with sensor filtering/averaging to reduce false triggers from noisy ultrasonic readings
-- Add an Android/iOS companion app with live distance readouts and a manual override switch between Bluetooth and autonomous mode
-- Possibly add an app/dashboard for live distance readings
+- Add an Android/iOS companion app with live distance readouts and mode-switching controls
+- Integrate camera-based object detection for smarter navigation, instead of relying only on ultrasonic distance
 
 ## Status
 
-## Status
-
-Fully functional. Supports Bluetooth control, autonomous obstacle avoidance, and voice control.
+Fully functional. Supports Bluetooth control, autonomous obstacle avoidance, and voice control, with seamless switching between modes.
