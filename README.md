@@ -28,7 +28,7 @@ The car is driven by 4 DC motors via an Adafruit Motor Shield (AFMotor library).
 - HC-05 Bluetooth Module
 - Chassis + wheels + battery pack
 
-## Circuit Diagram
+## Vehicle Images
 
 <table>
   <tr>
