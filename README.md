@@ -32,8 +32,8 @@ The car is driven by 4 DC motors via an Adafruit Motor Shield (AFMotor library).
 
 <table>
   <tr>
-    <td><img src="images/circuit-1.png" width="400"></td>
-    <td><img src="images/circuit-2.png" width="400"></td>
+    <td><img src="images/circuit-1.png" width="250"></td>
+    <td><img src="images/circuit-2.png" width="250"></td>
   </tr>
 </table>
 
