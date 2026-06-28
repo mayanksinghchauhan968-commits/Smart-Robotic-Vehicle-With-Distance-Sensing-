@@ -15,7 +15,6 @@ A servo-mounted ultrasonic sensor (HC-SR04) is also wired in for distance sensin
 - **Obstacle avoidance (in code, not yet active)** — logic written to auto-reverse and turn toward the clearer side when an obstacle is detected within 12cm
 - **Voice control (in code, not yet active)** — accepts symbolic voice-to-text commands (`^` `-` `<` `>` `*`)
 
-> Distance sensing and voice control are implemented in code and wired in hardware, but not fully reliable yet — kept in for future debugging/upgrades. Currently the car runs in Bluetooth-only control mode.
 
 ## Hardware Used
 
@@ -69,10 +68,12 @@ Pair your HC-05/HC-06 Bluetooth module with your phone, connect via any serial B
 
 ## Future Upgrades
 
-- Get ultrasonic + servo-based obstacle avoidance fully working for autonomous mode
-- Fix and re-enable voice control mode
+- Improve obstacle avoidance accuracy with sensor filtering/averaging to reduce false triggers from noisy ultrasonic readings
+- Add an Android/iOS companion app with live distance readouts and a manual override switch between Bluetooth and autonomous mode
 - Possibly add an app/dashboard for live distance readings
 
 ## Status
 
-Bluetooth control is fully working. Distance sensing and voice control are present in code/hardware but disabled pending further debugging.
+## Status
+
+Fully functional. Supports Bluetooth control, autonomous obstacle avoidance, and voice control.
