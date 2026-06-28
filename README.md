@@ -1,6 +1,6 @@
 # Smart Robotic Vehicle With Distance Sensing
 
-A 4-wheel-drive robotic vehicle built with Arduino, controlled via Bluetooth from a mobile app. It also includes (work-in-progress) ultrasonic distance sensing and voice control features for future upgrades.
+A 4-wheel-drive robotic vehicle built with Arduino, controlled via Bluetooth from a mobile app. It also includes ultrasonic distance sensing and voice control features for future upgrades.
 
 ## How It Works
 
