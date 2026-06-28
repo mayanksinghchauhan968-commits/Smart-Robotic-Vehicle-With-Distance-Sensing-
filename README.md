@@ -10,10 +10,10 @@ A servo-mounted ultrasonic sensor (HC-SR04) is also wired in for distance sensin
 
 ## Features
 
-- **Bluetooth control (active)** — drive forward, backward, left, right, and stop using a mobile Bluetooth app
-- **Distance sensing (hardware present)** — ultrasonic sensor + servo sweep to measure distance on either side
-- **Obstacle avoidance (in code, not yet active)** — logic written to auto-reverse and turn toward the clearer side when an obstacle is detected within 12cm
-- **Voice control (in code, not yet active)** — accepts symbolic voice-to-text commands (`^` `-` `<` `>` `*`)
+- **Bluetooth control ** — drive forward, backward, left, right, and stop using a mobile Bluetooth app
+- **Distance sensing ** — ultrasonic sensor + servo sweep to measure distance on either side
+- **Obstacle avoidance ** — logic written to auto-reverse and turn toward the clearer side when an obstacle is detected within 12cm
+- **Voice control ** — accepts symbolic voice-to-text commands (`^` `-` `<` `>` `*`)
 
 
 ## Hardware Used
